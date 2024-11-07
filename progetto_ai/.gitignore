@@ -1,0 +1,4 @@
+.cache/
+.cargo/
+.lesshst
+.python_history
