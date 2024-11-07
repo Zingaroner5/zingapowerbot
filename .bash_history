@@ -298,3 +298,6 @@ wget --no-check-certificate 'https://drive.google.com/uc?export=download&id=1Lxg
 ls ~/
 wget --no-check-certificate 'https://drive.google.com/uc?export=download&id=1LxgQT84F5cEAPJU7-fzx6VyZVz81W2pZ' -O ~/alarm_sound.mp3
 ls ~/
+cd ~/progetto_ai
+ls
+ls src
