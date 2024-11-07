@@ -1,10 +1,26 @@
-from flask import Flask
+import tkinter as tk
+from tkinter import messagebox
+# Se hai un modello AI, importalo qui
+# from ai_model import predict
 
-app = Flask(__name__)
+def on_button_click():
+    user_input = entry.get()
+    # Qui puoi integrare la tua funzione AI
+    # result = predict(user_input)
+    result = f"Elaborazione di '{user_input}' completata."
+    messagebox.showinfo("Risultato", result)
 
-@app.route('/')
-def home():
-    return "Il bot è attivo!"
+app = tk.Tk()
+app.title("Super App AI")
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+label = tk.Label(app, text="Inserisci il tuo testo:")
+label.pack(pady=10)
+
+entry = tk.Entry(app, width=50)
+entry.pack(pady=5)
+
+button = tk.Button(app, text="Elabora", command=on_button_click)
+button.pack(pady=20)
+
+app.mainloop()
+
