@@ -3,12 +3,12 @@ from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
 import openai
-import random
+import os
 
 app = FastAPI()
 
 # Configura la chiave API di OpenAI
-openai.api_key = 'RtaETJ8ZxI_2lwMigjAuQSrnpbj9cLaSLD0veN0FK4T3BlbkFJJ'
+openai.api_key = 'RtaETJ8ZxI_2lwMigjAuQSrnpbj9cLaSLD0veN0FK4T3Blb'  # Assicurati di sostituirlo con il tuo vero token in un ambiente sicuro
 
 # Configura i template HTML
 templates = Jinja2Templates(directory="templates")
@@ -20,7 +20,7 @@ users_db = {
 }
 
 channels_db = {
-    "1": {"name": "Notizie", "description": "Ultime notizie locali e internazionali"},
+    "1": {"name": "Notizie", "description": "Ultime notizie locali"},
     "2": {"name": "Sport", "description": "Discussioni su eventi sportivi"}
 }
 
@@ -58,3 +58,8 @@ async def chatbot_response(user_message: ChatMessage):
 @app.get("/", response_class=HTMLResponse)
 async def read_root(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
+
+# Configura la porta per Heroku
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
