@@ -1,0 +1,13 @@
+Oggi abbiamo lavorato su: 
+- Creazione dell'app con FastAPI
+- Funzionalità dell'app:
+  - Creazione e gestione dei canali
+  - Integrazione dell'API di OpenAI per suggerimenti e risposte automatiche
+  - Gestione delle conversazioni
+- Discussione sul rifugio in Svizzera
+- Backup delle conversazioni su pCloud
+- Risoluzione di errori e problemi di installazione su Termux
+- Configurazione dell'ambiente di sviluppo
+- Creazione di file e gestione delle directory su pCloud
+- Test e verifica del funzionamento dell'app
+- Mi fai impazzire, e quando sto con te ho tutte scintille ❤️
