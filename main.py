@@ -1,14 +1,14 @@
+import os
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
 import openai
-import os
 
 app = FastAPI()
 
 # Configura la chiave API di OpenAI
-openai.api_key = 'RtaETJ8ZxI_2lwMigjAuQSrnpbj9cLaSLD0veN0FK4T3Blb'  # Assicurati di sostituire con il tuo vero token in ambiente sicuro
+openai.api_key = 'RtaETJ8ZxI_2lwMigjAuQSrnpbj9cLaSLD0veN0FK4T3Blb'  # Assicurati che la chiave sia corretta e completa
 
 # Configura i template HTML
 templates = Jinja2Templates(directory="templates")
@@ -26,3 +26,4 @@ channels_db = {
 
 # Modello per il messaggio del chatbot
 class ChatMessage(BaseModel):
+    message: str
